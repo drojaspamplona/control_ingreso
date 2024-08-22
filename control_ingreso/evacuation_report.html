@@ -1,0 +1,11 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="content-container">
+    <h1>Reporte de Evacuación</h1>
+    <p>Empleados dentro: {{ employees_inside }}</p>
+    <p>Visitantes dentro: {{ visitors_inside }}</p>
+    <p>Total dentro: {{ total_inside }}</p>
+    <p>Hora actual: {{ current_time|date:'d/m/Y H:i' }}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+env/
+venv/
+ENV/
+venv.bak/
+*.env
+
+# Django
+*.log
+*.sqlite3
+db.sqlite3
+
+# PostgreSQL
+*.psql
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Static files
+staticfiles/
+
+# Media files
+media/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+
+# Other
+*.pot
+*.py[cod]
+*.pyo
+*.db
+*.sqlite3
+*.log
+*.bak
+*.tmp
+*.swp
+*.swo

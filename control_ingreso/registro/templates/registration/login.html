@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control de Ingresos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <main>
+      {% block content %}
+        <div class="login-container">
+          <h2 class="login-title">Iniciar Sesión</h2>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="login-button">Entrar</button>
+          </form>
+          <p class="signup-text">¿No tienes una cuenta? <a href="{% url 'signup' %}" class="signup-link">Registrarse</a></p>
+        </div>
+      {% endblock %}
+    </main>
+</body>
+</html>

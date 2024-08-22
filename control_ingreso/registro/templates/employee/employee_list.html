@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="content-container">
+    <div class="content-header">
+        <h1>Lista de Empleados</h1>
+        <a href="{% url 'employee_create' %}" class="custom-btn custom-btn-primary">Agregar Nuevo Empleado</a>
+    </div>
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Documento</th>
+                <th>Área</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.document_id }}</td>
+                <td>{{ employee.area }}</td>
+                <td>
+                    <a href="{% url 'employee_update' employee.pk %}" class="custom-btn custom-btn-warning">Editar</a>
+                    <a href="{% url 'employee_delete' employee.pk %}" class="custom-btn custom-btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

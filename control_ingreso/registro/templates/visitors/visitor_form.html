@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="content-container">
+    <h1>{% if form.instance.pk %}Editar{% else %}Crear{% endif %} Visitante</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="custom-btn custom-btn-primary">{% if form.instance.pk %}Actualizar{% else %}Crear{% endif %}</button>
+    </form>
+</div>
+{% endblock %}

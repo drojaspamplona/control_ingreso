@@ -1,0 +1,36 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="content-container">
+    <h1>Reporte de Asistencias</h1>
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Empleado</th>
+                <th>Visitante</th>
+                <th>Entrada</th>
+                <th>Salida</th>
+                <th>Duración</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for attendance in attendances %}
+            <tr>
+                <td>{{ attendance.employee }}</td>
+                <td>{{ attendance.visitor }}</td>
+                <td>fed</td>
+                <td>dffddf</td>
+                <td>
+                    {% if attendance.duration %}
+                        50 min
+                    {% else %}
+                        En curso
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Total de Horas: 20</h2>
+</div>
+{% endblock %}

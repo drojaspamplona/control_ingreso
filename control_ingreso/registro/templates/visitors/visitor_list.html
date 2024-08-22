@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="content-container">
+    <div class="content-header">
+        <h1>Lista de Visitantes</h1>
+        <a href="{% url 'visitor_create' %}" class="custom-btn custom-btn-primary">Agregar Nuevo Visitante</a>
+    </div>
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Documento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visitor in visitors %}
+            <tr>
+                <td>{{ visitor.name }}</td>
+                <td>{{ visitor.document_id }}</td>
+                <td>
+                    <a href="{% url 'visitor_update' visitor.pk %}" class="custom-btn custom-btn-warning">Editar</a>
+                    <a href="{% url 'visitor_delete' visitor.pk %}" class="custom-btn custom-btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
