@@ -1,37 +1,55 @@
-Desarrollar una aplicación de control de ingreso de empleados que permita nacer
+# Control de Ingreso de Empleados
 
-lo Registrar hora de ingreso y salida de los empleados
+## Descripción
 
-siguiente:
+Desarrollar una aplicación de control de ingreso de empleados con las siguientes funcionalidades:
 
-Crear, modificar y eliminar proveedores o invitados registrando nombre y documento de identidad
+- **Registrar hora de ingreso y salida** de los empleados.
+- **Crear, modificar y eliminar proveedores o invitados** registrando nombre y documento de identidad.
+- **Registrar hora de ingreso y salida** de los invitados o proveedores.
+- **Generar reportes** de las horas trabajadas por cada empleado.
+- **Generar reportes** de las horas trabajadas por áreas (sistemas, mercadeo, producción, etc.).
+- **Generar reporte** de la cantidad de personas que se encuentran dentro de la empresa para controlar las evacuaciones en caso de emergencia.
 
-Registrar hora de ingreso y salida de los invitados o proveedores Generar reportes de las horas trabajadas por cada empleado
+## Criterios de Aceptación
 
-Generar reportes de las horas trabajadas por áreas (sistemas, mercadeo
+- La aplicación debe permitir **filtrar** por fechas, empleados, invitados, proveedores o centro de costos.
+- Si un empleado ingresa y sale varias veces en el mismo día, se deberá calcular el **tiempo total** que permaneció dentro de las instalaciones.
+- Si un empleado se retira antes de las 16:00, se deberá pedir el **motivo de retiro** de acuerdo con las siguientes opciones: Cita médica, calamidad o diligencia personal.
+- Los **reportes** deben ser construidos en SQL.
 
-produccion, etc.)
+## Instalación y Configuración
 
-Generar reporte de la cantidad de personas que se encuentran dentro de la empresa para controlar las evacuaciones en caso de una emergencia
+### 1. Crear un Entorno Virtual
 
-Criterios de aceptación
+Para asegurar que todas las dependencias se manejen adecuadamente, crea un entorno virtual. Abre tu terminal y ejecuta:
 
-La aplicación debe permitir filtrar por fechas, empleados, invitados,
+```bash
+python -m venv env
+env\Scripts\activate
+source env/bin/activate
+pip install -r requirements.txt
 
-proveedores o centro de costos
+Configurar la Base de Datos
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nombre_de_base_de_datos',
+        'USER': 'usuario',
+        'PASSWORD': 'contraseña',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
-En caso de que un empleado ingrese y salga varias veces en el mismo día, se deberá calcular el tiempo total que permaneció dentro de las
+4. Crear las Migraciones
+python manage.py makemigrations
+python manage.py migrate
 
-instalaciones. Si el empleado se retirara de la compañía antes de las 16:00 se deberá
+Finalmente 
 
-pedir el motivo de retiro de acuerdo con las siguientes opciones: Cita
+python manage.py runserver
 
-médica, calamidad o diligencia personala
 
-Los reportes deben ser construidos en SQL
 
-Entrega:
-
-Subir el código a un repositorio público de GitHub para poderlo descargar. Notificar al correo drave@imr.com.co una vez finalizado el ejercicio.
-
-Si hay que instalar alguna librería externa, incluir el fichero requirements.txta Añadir al proyecto un README.md para saber cómo se ejecuta el programa.
+Este archivo `README.md` proporciona una guía completa y clara para configurar, ejecutar y entregar tu proyecto.
